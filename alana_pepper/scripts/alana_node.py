@@ -85,6 +85,7 @@ class AlanaNode(object):
 
     def on_shutdown(self):
         asr.enable(False)
+        tracker.stop()
 
 
 if __name__ == "__main__":
