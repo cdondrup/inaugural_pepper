@@ -1,0 +1,12 @@
+<launch>
+  <arg name="conf" default="$(find alana_pepper)/conf/pepper.yaml" />
+  <arg name="mummer_listening_app" default="$(optenv MUMMER_LISTENING_APP)" />
+  <arg name="mummer_speaking_app" default="$(optenv MUMMER_SPEAKING_APP)" />
+
+  <node name="alana_node" pkg="alana_pepper" type="alana_node.py" output="screen" respawn="true">
+    <param name="mummer_listening_app" type="string" value="$(arg mummer_listening_app)"/>
+    <param name="mummer_speaking_app" type="string" value="$(arg mummer_speaking_app)"/>
+    <param name="conf" type="string" value="$(arg conf)"/>
+  </node>
+  
+</launch>
