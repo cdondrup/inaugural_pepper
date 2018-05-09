@@ -62,7 +62,7 @@ class AlanaNode(object):
             answer = json.loads(answer)
             print "Alana:", answer
 
-            animated_say.say(answer[1])
+            animated_say.say(answer[1].replace('<say-as interpret-as="interjection">', '').replace('</say-as>', ''))
 
         asr.enable(True)
         behaviour_manager.toggle_behaviour(self.listening_app)
